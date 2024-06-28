@@ -19,6 +19,11 @@ button {
     font: inherit;
 }
 
+.margin-top {
+    margin-top: auto;
+}
+
+
 /* | VARIABLES */
 :root {
     /* | COLORS */
@@ -31,6 +36,8 @@ button {
 
     /* | FONT */
     --body-fonts: 500 18px 'Space Grotesk';
+    --card-number-fonts: 600 25px 'Space Grotesk';
+    --card-holder-info-fonts: 400 16px 'Space Grotesk';
 }
 
 /* | GENERAL STYLES */
@@ -44,5 +51,58 @@ body {
     background-image: url('images/bg-main-desktop.png');
     background-repeat: no-repeat;
     background-size: 30% 100%;
-    
+}
+
+/* | CARD SECTION */
+.card-section {
+    color: var(--White);
+    width: 50%;
+}
+
+.card-front,
+.card-back {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15), 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background-image: url('images/bg-card-front.png');
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 245px;
+    margin-left: auto;
+    margin-right: 125px;
+    padding: 25px;
+    width: 447px;
+}
+
+.card-front img {
+    width: 84px;
+    height: 47px;
+}
+
+.card-number {
+    font: var(--card-number-fonts);
+}
+
+.card-holder-info {
+    font: var(--card-holder-info-fonts);
+    display: flex;
+    flex-direction: row;
+    color: var(--Light-grayish-violet);
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card-back {
+    background-image: url('images/bg-card-back.png');
+    width: 447px;
+    height: 245px;
+    padding: 108px 0px 0px 360px;
+    border-radius: 10px;
+    margin: 30px 50px 0 auto;
+}
+
+.form-section {
+    width: 50%;
 }
