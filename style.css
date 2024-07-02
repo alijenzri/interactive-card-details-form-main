@@ -38,6 +38,7 @@ button {
     --body-fonts: 500 18px 'Space Grotesk';
     --card-number-fonts: 600 25px 'Space Grotesk';
     --card-holder-info-fonts: 400 16px 'Space Grotesk';
+    --form-group-label : 600 14px 'Space Grotesk';
 }
 
 /* | GENERAL STYLES */
@@ -103,6 +104,72 @@ body {
     margin: 30px 50px 0 auto;
 }
 
-.form-section {
+/* | FORM SECTION */
+.form-section,
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 50%;
+    margin-left: 60px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font: var(--form-group-label);
+    color: var(--Dark-grayish-violet);
+    letter-spacing: 1px;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: solid 1px var(--Very-dark-violet);
+    transition: border 0.3s ease-in-out;
+}
+
+.form-group input:focus {
+    border: solid 1px var(--active-input);
+}
+
+.form-group-expiry-date {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.expiry-date-fields {
+    display: flex;
+    flex-direction: row;
+}
+
+.expiry-date-fields input {
+    margin-top: 10px;
+}
+
+.form-group-cvc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.expiry-date-fields input {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.confirm-button {
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: var(--White);
+    background-color: var(--Very-dark-violet);
+    border: none;
 }

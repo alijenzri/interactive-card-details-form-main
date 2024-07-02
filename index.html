@@ -29,24 +29,27 @@
   <div class="form-section">
     <form action="#">
       <div class="form-group">
-        <label for="cardholder-name">Cardholder Name</label>
-        <input type="text" id="cardholder-name" placeholder="e.g. Jane Appleseed" class="input-cardholder-name">
+        <label for="input-name">Cardholder Name</label>
+        <input type="text" id="input-name" placeholder="e.g. Jane Appleseed" class="input-name">
       </div>
 
       <div class="form-group">
-        <label for="card-number">Card Number</label>
-        <input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000" class="input-card-number">
+        <label for="input-number">Card Number</label>
+        <input type="text" id="input-number" placeholder="e.g. 1234 5678 9123 0000" class="input-number">
       </div>
 
-      <div class="form-group form-group-expiry">
-        <label for="expiry-month">Exp. Date (MM/YY)</label>
-        <input type="number" id="expiry-month" placeholder="MM" class="input-expiry-month">
-        <input type="number" id="expiry-year" placeholder="YY" class="input-expiry-year">
-      </div>
-
-      <div class="form-group">
-        <label for="card-cvc">CVC</label>
-        <input type="number" id="card-cvc" placeholder="e.g. 123" class="input-card-cvc">
+      <div class="form-group form-group-expiry-date">
+        <div>
+          <label> exp. date (mm/yy)</label>
+          <div class="expiry-date-fields">
+            <input type="number" id="expiry-month" placeholder="MM" class="expiry-month">
+            <input type="number" id="expiry-year" placeholder="YY" class="expiry-year">
+          </div>
+        </div>
+        <div class="form-group-cvc">
+          <label for="card-cvc">CVC</label>
+          <input type="number" id="card-cvc" placeholder="e.g. 123" class="input-card-cvc">
+        </div>
       </div>
 
       <div class="form-group">
@@ -54,6 +57,7 @@
       </div>
     </form>
   </div>
+
 </body>
 
 </html>
