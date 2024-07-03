@@ -23,6 +23,10 @@ button {
     margin-top: auto;
 }
 
+.error-border {
+    border: solid 1px var(--Red);
+}
+
 
 /* | VARIABLES */
 :root {
@@ -166,10 +170,18 @@ form {
     margin-right: 10px;
 }
 
+.error-message {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--Red);
+    text-transform: lowercase;
+}
+
 .confirm-button {
     padding: 15px 20px;
     border-radius: 10px;
     color: var(--White);
     background-color: var(--Very-dark-violet);
     border: none;
+    cursor: pointer;
 }
