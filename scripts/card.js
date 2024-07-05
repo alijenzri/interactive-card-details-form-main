@@ -6,6 +6,10 @@ class Card {
     }
 
     cacheDOM() {
+        this.form = document.querySelector('form');
+        this.formSection = document.querySelector('.form-section'); // Cache form section
+        this.confirmButton = document.querySelector('.confirm-button');
+
         this.inputName = document.querySelector('.input-name');
         this.cardHolderName = document.querySelector('.card-holder-name');
         this.errorMessageName = document.querySelector('.error-message-name');
@@ -30,6 +34,7 @@ class Card {
         this.inputMonth.addEventListener('input', this.handleMonthInput.bind(this));
         this.inputYear.addEventListener('input', this.handleYearInput.bind(this));
         this.inputCardCvc.addEventListener('input', this.handleCvcInput.bind(this));
+        this.form.addEventListener('submit', this.handleSubmit.bind(this));
     }
 
     handleNameInput(event) {
@@ -110,8 +115,45 @@ class Card {
             this.inputCardCvc.classList.remove('error-border');
         }
 
-        this.cardHolderCvc.textContent = inputValue.substring(0,3);
+        this.cardHolderCvc.textContent = inputValue.substring(0, 3);
         this.updateCard();
+    }
+
+    validateInputs() {
+        const isNameValid = isAlpha(this.inputName.value.replace(/\s+/g, ''));
+        const isNumberValid = !isNaN(this.inputNumber.value.replace(/\s+/g, ''))
+            && this.inputNumber.value.replace(/\s+/g, '').length === 16;
+
+        if (!isNameValid) {
+            this.errorMessageName.textContent = 'Wrong format, characters only';
+            this.inputName.classList.add('error-border');
+        }
+
+        if (!isNumberValid) {
+            this.errorMessageNumber.textContent = 'The card number must be 16 digits and contain only numbers';
+            this.inputNumber.classList.add('error-border');
+        }
+
+        return isNameValid && isNumberValid;
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+        if (this.validateInputs()) {
+            this.formSection.innerHTML = `
+                <div class="thank-you-section">
+                    <img src="images/icon-complete.svg" class="thank-you-img" >
+                    <h1 class="thank-you-heading">THANK YOU!</h1>
+                    <p class="thank-you-message">We've added your card details</p>
+                    <button class="continue-button">Continue</button>
+                </div>
+            `;
+            // Add visible class after a delay to trigger transition
+            setTimeout(() => {
+                document.querySelector('.thank-you-section').classList.add('visible');
+            }, 10);
+        }
     }
 
     updateCard() {
@@ -124,12 +166,12 @@ class Card {
         }
 
         if (this.inputMonth.value === '') {
-            this.cardHolderDate.textContent = `00/${this.inputYear.value.substring(0,2) || '00'}`;
+            this.cardHolderDate.textContent = `00/${this.inputYear.value.substring(0, 2) || '00'}`;
         } else if (this.inputYear.value === '') {
-            this.cardHolderDate.textContent = `${this.inputMonth.value.substring(0,2) || '00'}/00`;
+            this.cardHolderDate.textContent = `${this.inputMonth.value.substring(0, 2) || '00'}/00`;
         }
 
-        if( this.inputCardCvc.value === ''){
+        if (this.inputCardCvc.value === '') {
             this.cardHolderCvc.textContent = '000';
         }
     }

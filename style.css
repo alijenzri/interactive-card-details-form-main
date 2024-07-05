@@ -19,6 +19,7 @@ button {
     font: inherit;
 }
 
+/* | UTILITY CLASS */
 .margin-top {
     margin-top: auto;
 }
@@ -31,8 +32,10 @@ button {
 /* | VARIABLES */
 :root {
     /* | COLORS */
-    --active-input : linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)); /* active input border */
-    --Red : hsl(0, 100%, 66%); /* input errors */
+    --active-input: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    /* active input border */
+    --Red: hsl(0, 100%, 66%);
+    /* input errors */
     --White: hsl(0, 0%, 100%);
     --Light-grayish-violet: hsl(270, 3%, 87%);
     --Dark-grayish-violet: hsl(279, 6%, 55%);
@@ -40,9 +43,9 @@ button {
 
     /* | FONT */
     --body-fonts: 500 18px 'Space Grotesk';
-    --card-number-fonts: 600 25px 'Space Grotesk';
+    --card-number-fonts: 600 32px 'Space Grotesk';
     --card-holder-info-fonts: 400 16px 'Space Grotesk';
-    --form-group-label : 600 14px 'Space Grotesk';
+    --form-group-label: 600 14px 'Space Grotesk';
 }
 
 /* | GENERAL STYLES */
@@ -114,7 +117,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 50%;
+    width: 49%;
     margin-left: 60px;
 }
 
@@ -177,11 +180,47 @@ form {
     text-transform: lowercase;
 }
 
-.confirm-button {
+.confirm-button,
+.continue-button {
     padding: 15px 20px;
     border-radius: 10px;
     color: var(--White);
     background-color: var(--Very-dark-violet);
     border: none;
     cursor: pointer;
+}
+
+/* | THANK YOU SCETION */
+.thank-you-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.thank-you-section.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.thank-you-img {
+    margin-bottom: 30px;
+}
+
+.thank-you-heading {
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.thank-you-message {
+    color: var(--Dark-grayish-violet);
+    margin-bottom: 50px;
+}
+
+.continue-button {
+    width: 465px;
 }
