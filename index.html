@@ -30,29 +30,29 @@
     <form action="#">
       <div class="form-group">
         <label for="input-name">Cardholder Name</label>
-        <input type="text" placeholder="e.g. Jane Appleseed" class="input-name">
-        <p class="error-message"></p>
+        <input type="text" placeholder="e.g. Jane Appleseed" class="input-name" required>
+        <p class="error-message error-message-name"></p>
       </div>
 
       <div class="form-group">
         <label for="input-number">Card Number</label>
-        <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="input-number">
-        <!-- <p class="error-message">Wrong format,numbers only</p> -->
+        <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="input-number" required>
+        <p class="error-message error-message-number"></p>
       </div>
 
       <div class="form-group form-group-expiry-date">
         <div>
           <label> exp. date (mm/yy)</label>
           <div class="expiry-date-fields">
-            <input type="number" placeholder="MM" class="expiry-month">
-            <input type="number" placeholder="YY" class="expiry-year">
+            <input type="number" placeholder="MM" class="expiry-month" max="12" min="1" required>
+            <input type="number" placeholder="YY" class="expiry-year" max="40" min="10" required>
           </div>
-          <!-- <p class="error-message">can't be blank</p> -->
+          <p class="error-message error-message-date"></p>
         </div>
         <div class="form-group-cvc">
           <label for="card-cvc">CVC</label>
-          <input type="number" placeholder="e.g. 123" class="input-card-cvc">
-          <!-- <p class="error-message">can't be blank</p> -->
+          <input type="number" placeholder="e.g. 123" class="input-card-cvc" max="999" min="100" required>
+          <p class="error-message error-message-cvc"></p>
         </div>
       </div>
 
