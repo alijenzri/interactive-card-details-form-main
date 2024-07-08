@@ -42,7 +42,7 @@ button {
     --body-fonts: 500 18px 'Space Grotesk';
     --card-number-fonts: 600 32px 'Space Grotesk';
     --card-holder-info-fonts: 400 16px 'Space Grotesk';
-    --form-group-label: 600 14px 'Space Grotesk';
+    --form-group-label-fonts: 600 14px 'Space Grotesk';
     --error-message-fonts: 500 14px 'Space Grotesk';
 }
 
@@ -122,7 +122,7 @@ form {
     width: 100%;
     margin-bottom: 20px;
     text-transform: uppercase;
-    font: var(--form-group-label);
+    font: var(--form-group-label-fonts);
     color: var(--Dark-grayish-violet);
     letter-spacing: 1px;
 }
@@ -230,7 +230,7 @@ form {
         --body-fonts: 500 17px 'Space Grotesk';
         --card-number-fonts: 600 30px 'Space Grotesk';
         --card-holder-info-fonts: 400 15px 'Space Grotesk';
-        --form-group-label: 600 13px 'Space Grotesk';
+        --form-group-label-fonts: 600 13px 'Space Grotesk';
         --error-message-fonts: 500 13px 'Space Grotesk';
     }
 
@@ -246,6 +246,10 @@ form {
 
     form {
         width: 66%;
+    }
+
+    .continue-button {
+        width: 360px;
     }
 }
 
@@ -314,6 +318,24 @@ form {
     .form-group input {
         padding: 10px 15px;
     }
+
+    .thank-you-img {
+        margin-bottom: 15px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .thank-you-heading {
+        margin-bottom: 10px;
+    }
+
+    .thank-you-message {
+        margin-bottom: 30px;
+    }
+
+    .continue-button {
+        width: 280px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -335,7 +357,7 @@ form {
         --body-fonts: 500 15px 'Space Grotesk';
         --card-number-fonts: 600 19px 'Space Grotesk';
         --card-holder-info-fonts: 400 13px 'Space Grotesk';
-        --form-group-label: 600 11px 'Space Grotesk';
+        --form-group-label-fonts: 600 11px 'Space Grotesk';
         --error-message-fonts: 500 11px 'Space Grotesk';
     }
 
@@ -391,7 +413,7 @@ form {
         --body-fonts: 500 14px 'Space Grotesk';
         --card-number-fonts: 600 15px 'Space Grotesk';
         --card-holder-info-fonts: 400 11px 'Space Grotesk';
-        --form-group-label: 600 10px 'Space Grotesk';
+        --form-group-label-fonts: 600 10px 'Space Grotesk';
         --error-message-fonts: 500 10px 'Space Grotesk';
     }
 
