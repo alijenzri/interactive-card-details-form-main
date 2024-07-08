@@ -1,7 +1,7 @@
 /* | IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
-/* | CSS RESET  */
+/* | CSS RESET */
 * {
     padding: 0;
     margin: 0;
@@ -28,14 +28,11 @@ button {
     border: solid 1px var(--Red);
 }
 
-
 /* | VARIABLES */
 :root {
     /* | COLORS */
     --active-input: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
-    /* active input border */
     --Red: hsl(0, 100%, 66%);
-    /* input errors */
     --White: hsl(0, 0%, 100%);
     --Light-grayish-violet: hsl(270, 3%, 87%);
     --Dark-grayish-violet: hsl(279, 6%, 55%);
@@ -71,18 +68,18 @@ body {
 .card-front,
 .card-back {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15), 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 447px;
+    height: 245px;
 }
 
 .card-front {
     background-image: url('images/bg-card-front.png');
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: 245px;
     margin-left: auto;
     margin-right: 125px;
     padding: 25px;
-    width: 447px;
 }
 
 .card-front img {
@@ -105,10 +102,7 @@ body {
 
 .card-back {
     background-image: url('images/bg-card-back.png');
-    width: 447px;
-    height: 245px;
     padding: 108px 0px 0px 360px;
-    border-radius: 10px;
     margin: 30px 50px 0 auto;
 }
 
@@ -149,30 +143,23 @@ form {
     border: solid 1px var(--active-input);
 }
 
-.form-group-expiry-date {
+.form-group-expiry-date,
+.expiry-date-fields {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.expiry-date-fields {
-    display: flex;
-    flex-direction: row;
-}
-
 .expiry-date-fields input {
+    width: 100px;
     margin-top: 10px;
+    margin-right: 10px;
 }
 
 .form-group-cvc {
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.expiry-date-fields input {
-    width: 100px;
-    margin-right: 10px;
 }
 
 .error-message {
@@ -192,7 +179,11 @@ form {
     cursor: pointer;
 }
 
-/* | THANK YOU SCETION */
+.continue-button {
+    width: 465px;
+}
+
+/* | THANK YOU SECTION */
 .thank-you-section {
     display: flex;
     flex-direction: column;
@@ -223,13 +214,8 @@ form {
     margin-bottom: 50px;
 }
 
-.continue-button {
-    width: 465px;
-}
-
 /* | MEDIA QUERY */
 @media screen and (max-width: 1440px) {
-    
     form {
         width: 60%;
     }
@@ -240,18 +226,12 @@ form {
 }
 
 @media screen and (max-width: 1250px) {
-    
     :root {
-        /* | FONT */
         --body-fonts: 500 17px 'Space Grotesk';
         --card-number-fonts: 600 30px 'Space Grotesk';
         --card-holder-info-fonts: 400 15px 'Space Grotesk';
         --form-group-label: 600 13px 'Space Grotesk';
         --error-message-fonts: 500 13px 'Space Grotesk';
-    }
-    
-    form {
-        width: 66%;
     }
 
     .card-front {
@@ -263,15 +243,17 @@ form {
         width: 420px;
         margin: 30px 30px 0 auto;
     }
+
+    form {
+        width: 66%;
+    }
 }
 
 @media screen and (max-width: 1024px) {
-    
     :root {
-        /* | FONT */
         --card-number-fonts: 600 20px 'Space Grotesk';
     }
-    
+
     body {
         flex-direction: column;
         justify-content: flex-start;
@@ -335,10 +317,6 @@ form {
 }
 
 @media screen and (max-width: 768px) {
-    form {
-        width: 400px;
-    }
-
     .card-front {
         margin-right: 40px;
     }
@@ -346,30 +324,19 @@ form {
     .card-back {
         margin-left: 60px;
     }
+
+    form {
+        width: 400px;
+    }
 }
 
 @media screen and (max-width: 482px) {
-    
     :root {
-        /* | FONT */
         --body-fonts: 500 15px 'Space Grotesk';
         --card-number-fonts: 600 19px 'Space Grotesk';
         --card-holder-info-fonts: 400 13px 'Space Grotesk';
         --form-group-label: 600 11px 'Space Grotesk';
         --error-message-fonts: 500 11px 'Space Grotesk';
-    }
-    
-    .form-group label {
-        margin-bottom: 5px;
-    }
-
-    .error-message,
-    .expiry-date-fields input {
-        margin-top: 5px;
-    }
-
-    form {
-        width: 300px;
     }
 
     .card-section {
@@ -399,6 +366,20 @@ form {
         padding: 64px 0px 0px 211px;
         margin-left: 30px;
     }
+
+    .form-group label {
+        margin-bottom: 5px;
+    }
+
+    .error-message,
+    .expiry-date-fields input {
+        margin-top: 5px;
+    }
+
+    form {
+        width: 300px;
+    }
+
     .expiry-date-fields input {
         width: 60px;
         margin-right: 5px;
@@ -407,7 +388,6 @@ form {
 
 @media screen and (max-width: 375px) {
     :root {
-        /* | FONT */
         --body-fonts: 500 14px 'Space Grotesk';
         --card-number-fonts: 600 15px 'Space Grotesk';
         --card-holder-info-fonts: 400 11px 'Space Grotesk';
@@ -437,6 +417,3 @@ form {
         margin-bottom: 5px;
     }
 }
-
-
-
